@@ -1,16 +1,29 @@
 import Board from "./board.js";
 
+const WEATHER_KEYS = {
+  2: "thunderstorm",
+  3: "drizzle",
+  5: "rain",
+  6: "snow",
+  800: "clear",
+  7: "hazy",
+  8: "cloudy",
+  90: "extreme",
+  9: "breezy"
+};
+
 class Game {
   constructor() {
     this.board = new Board();
     this.selected = null;
     this.setListeners();
     this.mapGrid();
-    // this.mapGrid.bind(this);
+    this.weatherBackground = this.weatherBackground.bind(this);
   }
 
   setListeners() {
     $r(".add-num").on("click", e => {
+      $r(".solved-status").empty();
       const node = $r(`.${this.selected}`);
       node.removeClass("selected");
       debugger;
@@ -20,7 +33,6 @@ class Game {
     });
 
     $r(".cell").on("click", e => {
-      debugger;
       if (
         $r(e.currentTarget)
           .attr("class")
@@ -35,13 +47,12 @@ class Game {
       }
     });
 
-    $r(".clear").on("click", e => {
+    $r(".reset").on("click", e => {
       this.board.resetGrid();
       this.mapGrid();
     });
 
     $r(".check").on("click", e => {
-      debugger;
       const $solved = $r(".solved-status");
       if (this.board.solved()) {
         $solved.html("You Solved it!");
@@ -49,6 +60,36 @@ class Game {
         $solved.html("Not Yet Solved");
       }
     });
+
+    $r(".weather").on("click", e => {
+      const weatherBackground = this.weatherBackground;
+      $r.ajax({
+        type: "GET",
+        url:
+          "http://api.openweathermap.org/data/2.5/weather?id=5128638&appid=bcb83c4b54aee8418983c2aff3073b3b",
+        success(data) {
+          debugger;
+          console.log(data.weather[0].id);
+          weatherBackground(data.weather[0].id);
+        },
+        error() {
+          console.error("An error occurred.");
+        }
+      });
+    });
+  }
+
+  weatherBackground(code) {
+    debugger;
+    let weather;
+    if (code === 800) {
+      weather = WEATHER_KEYS[code];
+    } else if (code % 10 === 90) {
+      weather = WEATHER_KEYS[code % 10];
+    } else {
+      weather = WEATHER_KEYS[code % 100];
+    }
+    $r("body").addClass(weather);
   }
 
   mapGrid() {

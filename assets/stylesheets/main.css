@@ -3,6 +3,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: ghostwhite;
 }
 .row {
   display: flex;
@@ -51,6 +52,13 @@ main {
 header {
   display: flex;
   flex-direction: column;
+  background-color: ghostwhite;
+  margin: 15px;
+}
+
+header > * {
+  padding: 5px;
+  margin: 5px;
 }
 .add-num {
   display: flex;
@@ -63,11 +71,20 @@ header {
   border-radius: 3px;
   border: 1px solid black;
 }
+
+.solution-div {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-size: cover;
 }
 
 .selected {
@@ -78,7 +95,64 @@ body {
   background-color: lightblue;
 }
 
-.clear {
+.reset,
+.check,
+.weather {
   padding: 2px;
   border: 1px solid black;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.instructions {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.solved-status {
+  text-align: center;
+  padding-top: 12px;
+}
+
+.title {
+  font-family: "Courgette", cursive;
+  background-color: ghostwhite;
+  font-size: 36px;
+  padding: 5px;
+}
+
+.thunderstorm {
+  background-image: url("../images/thunderstorm.jpg");
+}
+
+.drizzle {
+  background-image: url("../images/drizzle.jpg");
+}
+
+.rain {
+  background-image: url("../images/rain.jpg");
+}
+
+.snow {
+  background-image: url("../images/snow.jpg");
+}
+
+.clear {
+  background-image: url("../images/clear.jpg");
+}
+
+.hazy {
+  background-image: url("../images/hazy.jpg");
+}
+
+.cloudy {
+  background-image: url("../images/cloudy.jpg");
+}
+
+.extreme {
+  background-image: url("../images/extreme.jpg");
+}
+
+.breezy {
+  background-image: url("../images/breezy.jpg");
 }
