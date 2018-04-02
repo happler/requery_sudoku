@@ -21,7 +21,19 @@ main {
   height: 50px;
   border-left: 1px solid lightgrey;
   border-right: 1px solid lightgrey;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 44px;
 }
+
+.fixed {
+  font-weight: bold;
+  color: grey;
+}
+
+.mutable {
+}
+
 .sub-row {
   border-left: 1px solid black;
   border-right: 1px solid black;
@@ -56,4 +68,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.selected {
+  background-color: red;
+}
+
+.mutable:hover {
+  background-color: lightblue;
+}
+
+.clear {
+  padding: 2px;
+  border: 1px solid black;
 }

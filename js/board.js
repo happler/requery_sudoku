@@ -2,10 +2,11 @@ import { isEqual } from "lodash";
 
 class Board {
   constructor() {
-    this.grid = this.grid();
+    this.grid = this.newGrid();
+    this.resetGrid.bind(this);
   }
 
-  grid() {
+  newGrid() {
     return [
       ["", "", "", "", "", "", "", "", 3],
       ["", 5, 8, 6, "", "", "", "", 2],
@@ -20,7 +21,7 @@ class Board {
   }
 
   resetGrid() {
-    this.grid = this.grid();
+    this.grid = this.newGrid();
   }
   answer() {
     return [
