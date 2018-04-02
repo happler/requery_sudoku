@@ -1,3 +1,5 @@
+import { isEqual } from "lodash";
+
 class Board {
   constructor() {
     this.grid = this.grid();
@@ -16,6 +18,10 @@ class Board {
       [7, null, null, null, null, null, null, null, null]
     ];
   }
+
+  resetGrid() {
+    this.grid = this.grid();
+  }
   answer() {
     return [
       [1, 7, 6, 8, 9, 2, 4, 5, 3],
@@ -29,4 +35,10 @@ class Board {
       [7, 8, 9, 5, 2, 6, 3, 1, 4]
     ];
   }
+
+  solved() {
+    return isEqual(this.grid, this.answer());
+  }
 }
+
+export default Board;
