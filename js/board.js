@@ -7,15 +7,15 @@ class Board {
 
   grid() {
     return [
-      [null, null, null, null, null, null, null, null, 3],
-      [null, 5, 8, 6, null, null, null, null, 2],
-      [null, null, 4, null, 7, null, null, null, null],
-      [null, null, null, null, 5, 8, 6, null, 1],
-      [null, null, null, 4, null, 9, null, null, null],
-      [4, null, 2, 7, 3, null, null, null, null],
-      [null, null, null, null, 8, null, 9, null, null],
-      [6, null, null, null, null, 3, 8, 7, null],
-      [7, null, null, null, null, null, null, null, null]
+      ["", "", "", "", "", "", "", "", 3],
+      ["", 5, 8, 6, "", "", "", "", 2],
+      ["", "", 4, "", 7, "", "", "", ""],
+      ["", "", "", "", 5, 8, 6, "", 1],
+      ["", "", "", 4, "", 9, "", "", ""],
+      [4, "", 2, 7, 3, "", "", "", ""],
+      ["", "", "", "", 8, "", 9, "", ""],
+      [6, "", "", "", "", 3, 8, 7, ""],
+      [7, "", "", "", "", "", "", "", ""]
     ];
   }
 

@@ -13,7 +13,7 @@ class Game {
       const node = $r(`.${this.selected}`);
       node.removeClass("selected");
       node.html(e.currentTarget.value);
-      this.board.grid[this.selected[2]][this.selected[0]] =
+      this.board.grid[this.selected[7]][this.selected[5]] =
         e.currentTarget.value;
       this.selected = null;
     });
@@ -41,7 +41,7 @@ class Game {
   mapGrid() {
     for (let row = 0; row < 9; row++) {
       for (let col = 0; col < 9; col++) {
-        $r(`.${row},${col} `).html(`${this.board.grid[row][col]}`);
+        $r(`.cell-${row}-${col}`).html(`${this.board.grid[row][col]}`);
       }
     }
   }
