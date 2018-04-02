@@ -1,0 +1,37 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 1px solid lightgrey;
+}
+
+.row ul {
+  display: flex;
+  flex-direction: row;
+}
+.cell {
+  width: 50px;
+  height: 50px;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+.sub-row {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.row-0,
+.row-3,
+.row-6 {
+  border-top: 2px solid black;
+}
+
+.row-8 {
+  border-bottom: 2px solid black;
+}
