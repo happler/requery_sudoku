@@ -35,3 +35,25 @@ main {
 .row-8 {
   border-bottom: 2px solid black;
 }
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+.add-num {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-num__button {
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
