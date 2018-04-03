@@ -67,8 +67,6 @@ class Game {
         url:
           "https://api.openweathermap.org/data/2.5/weather?id=5128638&appid=bcb83c4b54aee8418983c2aff3073b3b",
         success(data) {
-          debugger;
-          console.log(data.weather[0].id);
           weatherBackground(data.weather[0].id);
         },
         error() {
@@ -79,7 +77,6 @@ class Game {
   }
 
   weatherBackground(code) {
-    debugger;
     let weather;
     if (code === 800) {
       weather = WEATHER_KEYS[code];

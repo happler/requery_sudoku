@@ -156,3 +156,32 @@ body {
 .breezy {
   background-image: url("../images/breezy.jpg");
 }
+
+.portfolio,
+.portfolio-by {
+  font-size: 24px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.portfolio:hover {
+  text-decoration: underline;
+  color: darkgrey;
+}
+
+.svg-inline--fa:hover {
+  color: darkgrey;
+}
+
+.fab {
+  width: 50px;
+}
+
+.personal-links {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
