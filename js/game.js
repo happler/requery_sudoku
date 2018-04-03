@@ -26,7 +26,6 @@ class Game {
       $r(".solved-status").empty();
       const node = $r(`.${this.selected}`);
       node.removeClass("selected");
-      debugger;
       node.html(e.target.value);
       this.board.grid[this.selected[7]][this.selected[5]] = e.target.value;
       this.selected = null;
@@ -84,10 +83,10 @@ class Game {
     let weather;
     if (code === 800) {
       weather = WEATHER_KEYS[code];
-    } else if (code % 10 === 90) {
-      weather = WEATHER_KEYS[code % 10];
+    } else if (Math.floor(code / 10) === 90) {
+      weather = WEATHER_KEYS[Math.floor(code / 10)];
     } else {
-      weather = WEATHER_KEYS[code % 100];
+      weather = WEATHER_KEYS[Math.floor(code / 100)];
     }
     $r("body").addClass(weather);
   }
